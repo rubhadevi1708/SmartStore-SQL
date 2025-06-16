@@ -1,0 +1,11 @@
+--Procedure: Place an Order
+CREATE OR REPLACE PROCEDURE place_order (
+    p_order_id IN NUMBER,
+    p_customer_id IN NUMBER
+) IS
+BEGIN
+    INSERT INTO orders (order_id, customer_id) VALUES (p_order_id, p_customer_id);
+    DBMS_OUTPUT.PUT_LINE('Order placed successfully');
+END;
+/
+
