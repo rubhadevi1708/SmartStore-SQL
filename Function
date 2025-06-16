@@ -1,0 +1,15 @@
+--Function: Get Total Bill for an Order
+CREATE OR REPLACE FUNCTION get_order_total(p_order_id NUMBER)
+RETURN NUMBER
+IS
+    v_total NUMBER;
+BEGIN
+    SELECT SUM(p.price * oi.quantity)
+    INTO v_total
+    FROM order_items oi
+    JOIN products p ON oi.product_id = p.product_id
+    WHERE oi.order_id = p_order_id;
+
+    RETURN v_total;
+END;
+/
