@@ -1,0 +1,6 @@
+--View: Low Stock Products
+
+CREATE OR REPLACE VIEW low_stock_products AS
+SELECT name, stock
+FROM products
+WHERE stock < 10;
