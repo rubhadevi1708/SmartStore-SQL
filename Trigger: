@@ -1,3 +1,4 @@
+--Trigger: Reduce Stock on Order
 CREATE OR REPLACE TRIGGER trg_reduce_stock
 AFTER INSERT ON order_items
 FOR EACH ROW
