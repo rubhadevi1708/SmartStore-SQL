@@ -1,0 +1,3 @@
+EXEC place_order(201, 1);
+INSERT INTO order_items VALUES (1, 201, 101, 2);
+SELECT get_order_total(201) FROM dual;
